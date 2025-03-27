@@ -1,10 +1,18 @@
 function transporMatriz(A) {
-    console.log("Matriz Original:");
+
+    // imprime o texto
+    console.log("Matriz Original:"); 
+    
+    // cria a matriz/ tabela
     console.table(A);
 
+    // analisa todo o index e cria linhas no lugar das colunas e vice-versa 
     let transposta = A[0].map((_, colIndex) => A.map(row => row[colIndex]));
 
+    //imprime o texto
     console.log("Matriz Transposta:");
+
+    // imprime a matriz transposta
     console.table(transposta);
 
     return transposta;
