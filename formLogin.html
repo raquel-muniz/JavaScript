@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formulário</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-image: url('imgs/bgSky.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .btn-animate {
+            animation: pulse 2.5s infinite;
+
+        }
+
+        .wallpaper {
+            position: relative;
+            background-image: url("imgs/bgSky.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .wallpaper::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            filter: blur(8px);
+            z-index: 0;
+        }
+
+        .form-container {
+            border-radius: 16px;
+            width: 85%;
+            margin: auto;
+            background-size: 200% 200%;
+        }
+
+        .form-inner {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.48);
+            /* Transparente para blur aparecer */
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 0 10px rgba(49, 0, 55, 0.5);
+        }
+
+        label {
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        p {
+            font-weight: normal;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: #343a40;
+            font-weight: 200;
+        }
+
+        footer {
+            text-align: center;
+            position: relative;
+            box-shadow: none;
+
+        }
+
+        .t-form {
+            text-align: center;
+            font-size: xx-large;
+        }
+
+        input::placeholder {
+            color: #aaa;
+            transition: opacity 0.6s ease;
+        }
+
+        input:focus::placeholder {
+            opacity: 0;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 51% 0%;
+            }
+
+            50% {
+                background-position: 50% 100%;
+            }
+
+            100% {
+                background-position: 51% 0%;
+            }
+        }
+
+        input:focus {
+            border-color: #e52e71;
+            box-shadow: 0 0 5px rgba(229, 46, 113, 0.6);
+            outline: none;
+        }
+
+        .gradient-border {
+            animation: gradient 4s ease infinite;
+            background-image: linear-gradient(135deg, #ff8a00, #e52e71);
+            background-size: 400% 400%;
+            height: 100%;
+            width: 100%;
+        }
+
+        @import "../node_modules/bootstrap/scss/variables-dark";
+        @import "../node_modules/bootstrap/scss/maps";
+        @import "../node_modules/bootstrap/scss/mixins";
+        @import "../node_modules/bootstrap/scss/root";
+
+        @import "../node_modules/bootstrap/scss/utilities";
+        @import "../node_modules/bootstrap/scss/reboot";
+        @import "../node_modules/bootstrap/scss/containers";
+        @import "../node_modules/bootstrap/scss/grid";
+        @import "../node_modules/bootstrap/scss/helpers";
+    </style>
+</head>
+
+<body class="wallpaper">
+    <header>
+
+    </header>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 form-container form-inner">
+                <div>
+                    <label for="title" style="font-size: xx-large; text-align: center;">Login</label>
+                    <p></p>
+                    <form id="Formulário">
+
+
+                        <div>
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Digite seu email"
+                                required />
+                        </div>
+
+                        <div class="m">
+                            <label for="tel" class="form-label">SENHA******:</label>
+                            <input type="tel" class="form-control" id="tel" placeholder="Digite seu telefone" />
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" id="submit-log">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <footer class="form-inner" style="margin-bottom: -50px; box-shadow: none;">
+                <p class="mb-0">FastNotes</p>
+                <p class="mb-0">Bloco de Notas com calculadora embutida<br>Agilidade & Facilidade</p>
+        </footer>
+    </div>
+    <script src="form.js"></script>
+</body>
+
+</html>
